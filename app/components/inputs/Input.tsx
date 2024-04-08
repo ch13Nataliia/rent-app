@@ -1,6 +1,6 @@
 'use client';
 
-import { FieldErrors, FieldValue, UseFormRegister } from 'react-hook-form';
+import { FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 import { BiPound } from 'react-icons/bi';
 
 interface InputProps {
@@ -9,15 +9,15 @@ interface InputProps {
   type?: string;
   disabled?: boolean;
   formatPrice?: boolean;
-  required: boolean;
-  register: UseFormRegister<FieldValue>;
-  errors: FieldErrors;
+  required?: boolean;
+  register: UseFormRegister<FieldValues>,
+  errors: FieldErrors
 }
 
 const Input: React.FC<InputProps> = ({
   id,
   label,
-  type,
+  type='text',
   disabled,
   formatPrice,
   required,
