@@ -1,7 +1,7 @@
 'use client';
 import axios from 'axios';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-
+import toast from 'react-hot-toast';
 import { useCallback, useState } from 'react';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
@@ -33,7 +33,7 @@ const RegisterModal = () => {
         registerModal.onClose();
       })
       .catch((error) => {
-        console.log(error);
+        toast.error('Something is wrong');
       })
       .finally(() => {
         setIsLoading(false);
